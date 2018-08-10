@@ -1,14 +1,20 @@
+
+
+#Python Code to create a Short term Spectrogram of a wave
+
 import scipy.io.wavfile as wav
 import numpy as np
 from matplotlib import pyplot as plot
 
 fs, data = wav.read('sample.wav')
 sf = int(fs)
+
+#Getting only the left Stereo from a dual channel Wave
 left=[]
 for i in range (0,len(data)):
 	left.insert(i,int(data[i][0]))
 	
-#left1 = int(left)
+#Getting only the right Stereo from a dual channel Wave
 right=[]
 for i in range (0,len(data)):
 	right.insert(i,int(data[i][1]))
